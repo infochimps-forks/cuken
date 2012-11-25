@@ -49,6 +49,10 @@ module Cuken
         found_good_proc = false
         procs.each do |process|
           proc_ok = true
+          # If username is > 8 chars, Linux swaps it for the UID.  
+          if owner.length > 8
+            owner = Etc.getpwnam(owner).uid.to_s
+          end
           proc_ok &&= (process[:owner] == owner) unless not owner
           proc_ok &&= (process[:pid] == pid) unless not pid
           found_good_proc ||= proc_ok
