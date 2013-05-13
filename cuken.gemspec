@@ -549,7 +549,7 @@ Gem::Specification.new do |s|
       s.add_runtime_dependency(%q<open4>, [">= 0"])
       s.add_runtime_dependency(%q<rspec>, [">= 0"])
       s.add_runtime_dependency(%q<rvm>, ["~> 1.8.0"])
-      s.add_runtime_dependency(%q<vagrant>, ["~> 0.8"])
+      s.add_runtime_dependency(%q<vagrant>, [">= 0"])
       s.add_development_dependency(%q<rr>, ["~> 1.0.2"])
       s.add_development_dependency(%q<chef>, ["~> 10.0"])
       s.add_development_dependency(%q<cucumber>, ["> 1.0.0"])
@@ -560,7 +560,7 @@ Gem::Specification.new do |s|
       s.add_development_dependency(%q<reek>, ["~> 1.2.8"])
       s.add_development_dependency(%q<roodi>, ["~> 2.1.0"])
       s.add_development_dependency(%q<fakefs>, ["~> 0.3.1"])
-      s.add_development_dependency(%q<vagrant>, ["~> 0.8"])
+      s.add_development_dependency(%q<vagrant>, [">= 0"])
     else
       s.add_dependency(%q<chef>, ["~> 10.0"])
       s.add_dependency(%q<childprocess>, [">= 0.1.7"])
@@ -569,7 +569,7 @@ Gem::Specification.new do |s|
       s.add_dependency(%q<open4>, [">= 0"])
       s.add_dependency(%q<rspec>, [">= 0"])
       s.add_dependency(%q<rvm>, ["~> 1.8.0"])
-      s.add_dependency(%q<vagrant>, ["~> 0.8"])
+      s.add_dependency(%q<vagrant>, [">= 0"])
       s.add_dependency(%q<rr>, ["~> 1.0.2"])
       s.add_dependency(%q<chef>, ["~> 10.0"])
       s.add_dependency(%q<cucumber>, ["> 1.0.0"])
@@ -580,7 +580,7 @@ Gem::Specification.new do |s|
       s.add_dependency(%q<reek>, ["~> 1.2.8"])
       s.add_dependency(%q<roodi>, ["~> 2.1.0"])
       s.add_dependency(%q<fakefs>, ["~> 0.3.1"])
-      s.add_dependency(%q<vagrant>, ["~> 0.8"])
+      s.add_dependency(%q<vagrant>, [">= 0"])
     end
   else
     s.add_dependency(%q<chef>, ["~> 10.0"])
@@ -590,7 +590,7 @@ Gem::Specification.new do |s|
     s.add_dependency(%q<open4>, [">= 0"])
     s.add_dependency(%q<rspec>, [">= 0"])
     s.add_dependency(%q<rvm>, ["~> 1.8.0"])
-    s.add_dependency(%q<vagrant>, ["~> 0.8"])
+    s.add_dependency(%q<vagrant>, [">= 0"])
     s.add_dependency(%q<rr>, ["~> 1.0.2"])
     s.add_dependency(%q<chef>, ["~> 10.0"])
     s.add_dependency(%q<cucumber>, ["> 1.0.0"])
@@ -601,7 +601,7 @@ Gem::Specification.new do |s|
     s.add_dependency(%q<reek>, ["~> 1.2.8"])
     s.add_dependency(%q<roodi>, ["~> 2.1.0"])
     s.add_dependency(%q<fakefs>, ["~> 0.3.1"])
-    s.add_dependency(%q<vagrant>, ["~> 0.8"])
+    s.add_dependency(%q<vagrant>, [">= 0"])
   end
 end
 
