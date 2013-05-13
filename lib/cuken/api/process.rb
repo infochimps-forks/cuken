@@ -26,6 +26,7 @@ module Cuken
       #about all running processes that could match proc_name.
       #The hash contains 3 keys - owner, pid, and command.
       def get_procs_by_name(proc_name)
+        raise 'No process name announced' if proc_name.to_s.empty?
         proc_strings = `ps aux |grep #{proc_name[0...-1]}[#{proc_name[-1]}]`.split("\n")
         procs = []
         proc_strings.each do |proc_string|
@@ -49,7 +50,7 @@ module Cuken
         found_good_proc = false
         procs.each do |process|
           proc_ok = true
-          # If username is > 8 chars, Linux swaps it for the UID.  
+          # If username is > 8 chars, Linux swaps it for the UID.
           if owner.length > 8
             owner = Etc.getpwnam(owner).uid.to_s
           end
