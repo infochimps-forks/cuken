@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = "cuken"
-  s.version = "0.1.22"
+  s.version = "0.2.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Hedgehog"]
-  s.date = "2012-08-13"
+  s.date = "2013-05-13"
   s.description = "Reusable Cucumber steps and API for post-convergence system integration descriptions"
   s.email = "hedgehogshiatus@gmail.com"
   s.extra_rdoc_files = [
@@ -20,6 +20,7 @@ Gem::Specification.new do |s|
     ".document",
     ".relish",
     ".rspec",
+    ".travis.yml",
     "Gemfile",
     "LICENSE",
     "NOTICE",
@@ -534,70 +535,73 @@ Gem::Specification.new do |s|
   s.homepage = "http://github.com/hedgehog/cuken"
   s.licenses = ["Apache 2.0"]
   s.require_paths = ["lib"]
-  s.rubygems_version = "1.8.24"
+  s.rubygems_version = "1.8.23"
   s.summary = "Reusable Cucumber steps and API for post-convergence system integration descriptions"
 
   if s.respond_to? :specification_version then
     s.specification_version = 3
 
     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
-      s.add_runtime_dependency(%q<chef>, ["~> 0.10.0"])
-      s.add_runtime_dependency(%q<rspec>, [">= 0"])
-      s.add_runtime_dependency(%q<cucumber>, ["> 1.0.0"])
+      s.add_runtime_dependency(%q<chef>, ["~> 10.0"])
       s.add_runtime_dependency(%q<childprocess>, [">= 0.1.7"])
+      s.add_runtime_dependency(%q<cucumber>, ["> 1.0.0"])
       s.add_runtime_dependency(%q<grit>, ["~> 2.4.1"])
-      s.add_runtime_dependency(%q<json>, [">= 0"])
       s.add_runtime_dependency(%q<open4>, [">= 0"])
+      s.add_runtime_dependency(%q<rspec>, [">= 0"])
       s.add_runtime_dependency(%q<rvm>, ["~> 1.8.0"])
-      s.add_runtime_dependency(%q<vagrant>, ["~> 0.8.7"])
+      s.add_runtime_dependency(%q<vagrant>, ["~> 0.8"])
       s.add_development_dependency(%q<rr>, ["~> 1.0.2"])
+      s.add_development_dependency(%q<chef>, ["~> 10.0"])
+      s.add_development_dependency(%q<cucumber>, ["> 1.0.0"])
       s.add_development_dependency(%q<yard>, ["~> 0.6.0"])
       s.add_development_dependency(%q<bundler>, ["~> 1.1.rc"])
       s.add_development_dependency(%q<jeweler>, ["~> 1.6.4"])
-      s.add_development_dependency(%q<simplecov>, [">= 0.5"])
-      s.add_development_dependency(%q<rcov>, [">= 0"])
+      s.add_development_dependency(%q<simplecov>, [">= 0"])
       s.add_development_dependency(%q<reek>, ["~> 1.2.8"])
       s.add_development_dependency(%q<roodi>, ["~> 2.1.0"])
       s.add_development_dependency(%q<fakefs>, ["~> 0.3.1"])
+      s.add_development_dependency(%q<vagrant>, ["~> 0.8"])
     else
-      s.add_dependency(%q<chef>, ["~> 0.10.0"])
-      s.add_dependency(%q<rspec>, [">= 0"])
-      s.add_dependency(%q<cucumber>, ["> 1.0.0"])
+      s.add_dependency(%q<chef>, ["~> 10.0"])
       s.add_dependency(%q<childprocess>, [">= 0.1.7"])
+      s.add_dependency(%q<cucumber>, ["> 1.0.0"])
       s.add_dependency(%q<grit>, ["~> 2.4.1"])
-      s.add_dependency(%q<json>, [">= 0"])
       s.add_dependency(%q<open4>, [">= 0"])
+      s.add_dependency(%q<rspec>, [">= 0"])
       s.add_dependency(%q<rvm>, ["~> 1.8.0"])
-      s.add_dependency(%q<vagrant>, ["~> 0.8.7"])
+      s.add_dependency(%q<vagrant>, ["~> 0.8"])
       s.add_dependency(%q<rr>, ["~> 1.0.2"])
+      s.add_dependency(%q<chef>, ["~> 10.0"])
+      s.add_dependency(%q<cucumber>, ["> 1.0.0"])
       s.add_dependency(%q<yard>, ["~> 0.6.0"])
       s.add_dependency(%q<bundler>, ["~> 1.1.rc"])
       s.add_dependency(%q<jeweler>, ["~> 1.6.4"])
-      s.add_dependency(%q<simplecov>, [">= 0.5"])
-      s.add_dependency(%q<rcov>, [">= 0"])
+      s.add_dependency(%q<simplecov>, [">= 0"])
       s.add_dependency(%q<reek>, ["~> 1.2.8"])
       s.add_dependency(%q<roodi>, ["~> 2.1.0"])
       s.add_dependency(%q<fakefs>, ["~> 0.3.1"])
+      s.add_dependency(%q<vagrant>, ["~> 0.8"])
     end
   else
-    s.add_dependency(%q<chef>, ["~> 0.10.0"])
-    s.add_dependency(%q<rspec>, [">= 0"])
-    s.add_dependency(%q<cucumber>, ["> 1.0.0"])
+    s.add_dependency(%q<chef>, ["~> 10.0"])
     s.add_dependency(%q<childprocess>, [">= 0.1.7"])
+    s.add_dependency(%q<cucumber>, ["> 1.0.0"])
     s.add_dependency(%q<grit>, ["~> 2.4.1"])
-    s.add_dependency(%q<json>, [">= 0"])
     s.add_dependency(%q<open4>, [">= 0"])
+    s.add_dependency(%q<rspec>, [">= 0"])
     s.add_dependency(%q<rvm>, ["~> 1.8.0"])
-    s.add_dependency(%q<vagrant>, ["~> 0.8.7"])
+    s.add_dependency(%q<vagrant>, ["~> 0.8"])
     s.add_dependency(%q<rr>, ["~> 1.0.2"])
+    s.add_dependency(%q<chef>, ["~> 10.0"])
+    s.add_dependency(%q<cucumber>, ["> 1.0.0"])
     s.add_dependency(%q<yard>, ["~> 0.6.0"])
     s.add_dependency(%q<bundler>, ["~> 1.1.rc"])
     s.add_dependency(%q<jeweler>, ["~> 1.6.4"])
-    s.add_dependency(%q<simplecov>, [">= 0.5"])
-    s.add_dependency(%q<rcov>, [">= 0"])
+    s.add_dependency(%q<simplecov>, [">= 0"])
     s.add_dependency(%q<reek>, ["~> 1.2.8"])
     s.add_dependency(%q<roodi>, ["~> 2.1.0"])
     s.add_dependency(%q<fakefs>, ["~> 0.3.1"])
+    s.add_dependency(%q<vagrant>, ["~> 0.8"])
   end
 end
 

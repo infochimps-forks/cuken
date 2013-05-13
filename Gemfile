@@ -20,7 +20,7 @@ group :development do
   gem 'yard', "~> 0.6.0"
   gem 'bundler', "~> 1.1.rc"
   gem 'jeweler', "~> 1.6.4"
-  gem 'rcov', ">= 0"
+  gem 'simplecov'
   gem 'reek', "~> 1.2.8"
   gem 'roodi', "~> 2.1.0"
   gem 'fakefs', '~> 0.3.1'
