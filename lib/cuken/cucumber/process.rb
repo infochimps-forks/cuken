@@ -22,5 +22,7 @@ Then /^these processes are running:$/ do |table|
   if table_raw[0][0] == 'name'
     table_raw.delete_at(0)
   end
-  table_raw.map{|row| check_process(row[0],row[1],row[2])}
+
+  # Reverse last two columns so we can omit pid column
+  table_raw.map{|row| check_process(row[0],row[1],row[3],row[2])}
 end

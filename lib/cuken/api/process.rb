@@ -35,6 +35,7 @@ module Cuken
           proc_hash[:owner] = proc_columns[USER_INDEX]
           proc_hash[:pid] = proc_columns[PID_INDEX]
           proc_hash[:name] = final_path_component(proc_columns[NAME_INDEX])
+          proc_hash[:full_cmd_line] = proc_string
           next unless proc_hash[:name] == proc_name
           procs << proc_hash
         end
@@ -43,7 +44,7 @@ module Cuken
 
       #Checks that a process with the supplied
       #attributes is running
-      def check_process(name, owner=nil, pid=nil)
+      def check_process(name, owner=nil, pid=nil, cmd_line_match=nil)
         procs = get_procs_by_name(name)
         procs.should_not be_empty
         return unless owner or pid
@@ -56,6 +57,7 @@ module Cuken
           end
           proc_ok &&= (process[:owner] == owner) unless not owner
           proc_ok &&= (process[:pid] == pid) unless not pid
+          proc_ok &&= (/#{cmd_line_match}/.match process[:full_cmd_line]) unless not cmd_line_match
           found_good_proc ||= proc_ok
         end
         found_good_proc.should be_true
