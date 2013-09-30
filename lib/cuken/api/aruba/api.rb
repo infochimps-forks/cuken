@@ -70,6 +70,15 @@ module ::Cuken
           end
         end
 
+        def check_glob_match(paths)
+          all_matched = true
+          paths.each do |path|
+            matches = Dir.glob(path)
+            all_matched = false unless matches[0] and ::File.should be_file(matches[0])
+          end
+          all_matched
+        end
+
     #    def check_file_content(file, partial_content, expect_match)
     #      regexp = regexp(partial_content)
     #      prep_for_fs_check do

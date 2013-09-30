@@ -97,6 +97,10 @@ Then /^these directories do not exist:$/ do |table|
   check_directory_presence(table.raw.map{|directory_row| directory_row[0]}, false)
 end
 
+Then /^matches for these file globs exist:$/ do |table|
+  check_glob_match(table.raw.map{|file_row| file_row[0]})
+end
+
 Then /^these files exist:$/ do |table|
   check_file_presence(table.raw.map{|file_row| file_row[0]}, true)
 end
