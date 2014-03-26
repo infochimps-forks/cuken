@@ -73,6 +73,12 @@ module ::Cuken
         def check_glob_match(paths)
           all_matched = true
           paths.each do |path|
+            if (::File.directory?(path) && !(path =~ /\*$/))
+              if !(path =~ /\/$/)
+                path << "/"
+              end
+              path << "*"
+            end
             matches = Dir.glob(path)
             all_matched = false unless matches[0] and ::File.should be_file(matches[0])
           end
