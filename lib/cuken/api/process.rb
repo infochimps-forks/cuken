@@ -9,7 +9,7 @@ module Cuken
 
       #ensure that we're using the right column indices for ps
       #token attempt at cross-platform compatibility
-      column_list = `ps aux`.split("\n")[0].split
+      column_list = `ps auxww`.split("\n")[0].split
       USER_INDEX = column_list.index("USER")
       PID_INDEX = column_list.index("PID")
       NAME_INDEX = column_list.index("COMMAND")
@@ -27,7 +27,7 @@ module Cuken
       #The hash contains 3 keys - owner, pid, and command.
       def get_procs_by_name(proc_name)
         raise 'No process name announced' if proc_name.to_s.empty?
-        proc_strings = `ps aux |grep #{proc_name[0...-1]}[#{proc_name[-1]}]`.split("\n")
+        proc_strings = `ps auxww |grep #{proc_name[0...-1]}[#{proc_name[-1]}]`.split("\n")
         procs = []
         proc_strings.each do |proc_string|
           proc_columns = proc_string.split
