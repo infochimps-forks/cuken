@@ -82,7 +82,7 @@ module ::Cuken
             matches = Dir.glob(path)
             all_matched = false unless matches[0] and ::File.should be_file(matches[0])
           end
-          all_matched
+          all_matched.should == true
         end
 
     #    def check_file_content(file, partial_content, expect_match)
