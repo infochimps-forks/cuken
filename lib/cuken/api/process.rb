@@ -55,8 +55,8 @@ module Cuken
           if owner.length > 8
             owner = Etc.getpwnam(owner).uid.to_s
           end
-          proc_ok &&= (process[:owner] == owner) unless not owner
-          proc_ok &&= (process[:pid] == pid) unless not pid
+          proc_ok &&= (process[:owner] == owner) unless (owner.nil? || owner.strip.empty?)
+          proc_ok &&= (process[:pid] == pid) unless (pid.nil? || pid.strip.empty?)
           proc_ok &&= (/#{cmd_line_match}/.match process[:full_cmd_line]) unless not cmd_line_match
           found_good_proc ||= proc_ok
         end
